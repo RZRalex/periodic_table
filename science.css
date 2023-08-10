@@ -65,21 +65,17 @@ body {
     content: '';
 }
 
-/* @media all and (max-width: 1100px){
-    #helium, #boron, #aluminum, #cerium, #thorium{
-        grid-column-start: auto;
-    }
-    .periodic-table {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .periodic-table > li abbr {
-        font-size: 0;
-    }
-    .periodic-table > li abbr:after {
-        content: attr(title);
-        font-size: 2rem;
-    }
-    .periodic-table > li:before {
-        font-size: 1rem;
-    } */
-/* } */
+.periodic-table > li:nth-child(n+57):nth-last-child(n+49){
+    grid-row-start: 8;
+}
+
+.periodic-table > li:nth-child(n+89):nth-last-child(n+17) {
+    grid-row-start: 9;
+}
+
+.periodic-table:before {
+    display: block;
+    content: '';
+    grid-row: 8 / 10;
+    grid-column: 1 / 4;
+}
