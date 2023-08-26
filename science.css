@@ -6,7 +6,7 @@ body *{
     font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
     font-weight: bold;
-    font-size: large;
+    font-size: 1.9rem;
 }
 
 body {
@@ -38,10 +38,10 @@ body {
     counter-increment: element;
     content: counter(element);
     position: absolute;
-    bottom: 5px;
+    bottom: 3px;
     left: 6px;
     font-size: .9vw;
-    font-weight: lighter;
+    font-weight: bold;
 }
 
 .hydrogen {
@@ -78,4 +78,98 @@ body {
     content: '';
     grid-row: 8 / 10;
     grid-column: 1 / 4;
+}
+
+.periodic-table .hydrogen {
+    background: tomato;
+}
+
+.periodic-table .alkali {
+    background: khaki;
+}
+
+.periodic-table .noble-gas {
+    background: gold;
+}
+
+.periodic-table .alkaline {
+    background: darkorange;
+}
+
+.periodic-table .lanthanide {
+    background: greenyellow;
+}
+
+.periodic-table .actinide {
+    background: aquamarine;
+}
+
+.periodic-table .metalloid {
+    background: lightgreen;
+}
+
+.periodic-table .polyatomic-nonmetal {
+    background: indianred;
+}
+
+.periodic-table .diatomic-nonmetal {
+    background: lightsalmon;
+}
+
+.periodic-table .unknown {
+    background: lightgray;
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 1101px) {
+    body *{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    #helium, #boron, #aluminum, #lanthanum, #actinium {
+        grid-column-start: auto;
+    }
+    #lanthanum, #actinium {
+        grid-row-start: auto;
+    }
+    .periodic-table > li:nth-child(n+57):nth-last-child(n+49){
+        grid-row-start: auto;
+    }
+    .periodic-table > li:nth-child(n+89):nth-last-child(n+17) {
+        grid-row-start: auto;
+    }
+    body * {
+        font-size: 1.5rem;
+    }
+    .periodic-table > li::before{
+        font-size: 1.5vw;
+    }
+    .periodic-table > li abbr{
+        font-size: 0;
+    }
+    .periodic-table > li abbr:after {
+        content: attr(title);
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .periodic-table {
+        grid-template-columns: 1fr;
+    }
+    .periodic-table {
+    display: block;
+    }
+    .periodic-table li {
+        margin: 1vw;
+        padding: 1.5rem;
+    }
+    .periodic-table > li::before{
+        font-size: 2vw;
+    }
+    .periodic-table > li abbr:after {
+        content: attr(title);
+        font-size: 2.2rem;
+    }
 }
