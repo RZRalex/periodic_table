@@ -1,21 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap');
+
 body *{
     margin: 0px;
     padding: 0px;
     outline: 0px;
     border: 0px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
     box-sizing: border-box;
     font-weight: bold;
     font-size: 1.9rem;
 }
 
 body {
-    margin: 5vw;
-    background: #3f3a3a;
+    margin: 1vw 8vw 2vw;
+        /* background: #3f3a3a; */
+    background-image: url("imgs/TableBG.jpg");
     color: #000;
     counter-reset: element;
 }
 
+/* Header details here */
+div h1 {
+    font-size: 5rem;
+    padding: 1.5vw 1.5vw 0vw;
+}
+
+h1 {
+    background: black;
+    color: azure;
+    filter: opacity(50%);
+    margin: 0 9vw 2vw 9vw;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+/* Table setup */
 .periodic-table {
     display: grid;
     column-gap: .5vw;
@@ -28,12 +49,14 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 4.5vw;
+    height: 4vw;
     border-radius: 3px;
     background: cyan;
 
 }
 
+
+/* Adding elemental numbers */
 .periodic-table > li::before{
     counter-increment: element;
     content: counter(element);
@@ -44,6 +67,9 @@ body {
     font-weight: bold;
 }
 
+/* This is where the cool stuff starts. When helium is assigned "grid-column-start" at 18 
+the flex grid automatically assigns 18 rows to the entire grid. When boron and aluminum
+start at 13 the space between is left empty just how we need it */
 .hydrogen {
     grid-column-start: 1;
 }
@@ -60,11 +86,8 @@ body {
     grid-column-start: 3;
 }
 
-.periodic-table:before {
-    display: block;
-    content: '';
-}
 
+/* This cuts out the lanthanides and actinides and drops them below the main body of elements */
 .periodic-table > li:nth-child(n+57):nth-last-child(n+49){
     grid-row-start: 8;
 }
@@ -80,6 +103,9 @@ body {
     grid-column: 1 / 4;
 }
 
+
+
+/* This is the coloring styles for each category of elements */
 .periodic-table .hydrogen {
     background: tomato;
 }
@@ -120,6 +146,8 @@ body {
     background: lightgray;
 }
 
+
+/* media queries */
 @media only screen and (max-width: 1500px) and (min-width: 1101px) {
     body *{
         font-size: 1.5rem;
@@ -127,6 +155,10 @@ body {
 }
 
 @media only screen and (max-width: 1100px) {
+    div h1 {
+        font-size: 3rem;
+    }
+    /* undoing all the positioning we did so they can display as cards */
     #helium, #boron, #aluminum, #lanthanum, #actinium {
         grid-column-start: auto;
     }
