@@ -127,7 +127,7 @@ start at 13 the space between is left empty just how we need it */
 }
 
 .periodic-table .actinide {
-    background: aquamarine;
+    background: darkcyan;
 }
 
 .periodic-table .metalloid {
@@ -143,7 +143,7 @@ start at 13 the space between is left empty just how we need it */
 }
 
 .periodic-table .unknown {
-    background: lightgray;
+    background: lightslategray;
 }
 
 
@@ -177,9 +177,11 @@ start at 13 the space between is left empty just how we need it */
     .periodic-table > li::before{
         font-size: 1.5vw;
     }
+    /* this "eliminates" the regular abbreviation for each element */
     .periodic-table > li abbr{
         font-size: 0;
     }
+    /* this brings the full element name written in each "title" to be brought out as the content */
     .periodic-table > li abbr:after {
         content: attr(title);
         font-size: 1.5rem;
